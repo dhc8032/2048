@@ -1,19 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <head>
     <title>2048</title>
     <style>
-        #canvas{
-            background-color: #000000;
-            width: 100%;
-            object-fit: contain;
-            margin: 0%;
-            padding: 0%;
+        #game-container{
+            background-color: #BBADA0;
+            height: 500px;
+            width: 500px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 7px;
+        }
+        .tile-2{
+            width: 107px;
+            height: 107px;
+            line-height:107px;
+            position: absolute;
+            background-color: #eee4da;
+        }
+        .game-row:before{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .game-row{
+            padding-top: 15px;
+        }
+        .game-row:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .game-cell{
+            background: rgba(238, 228, 218, 0.35);
+            width: 106.5px;
+            height: 106.5px;
+            margin-right: 15px;
+            border-radius: 3px;
+            float: left;
+        }
+        .game-cell:last-child{
+            margin-right: 0px;
+        }
+        .game-cell:first-child{
+            margin-left: 15px;
         }
     </style>
 </head>
 <body>
-    <canvas id = "canvas" onclick = "setup()"></canvas>
-    <script src = "2048.js"></script>
+
+    <div id = "game-container">
+        <div class = "game-row">
+            <div class = "game-cell"></div>
+            <div class = "game-cell"></div>
+            <div class = "game-cell"></div>
+            <div class = "game-cell"></div>
+        </div>
+        <div class = "game-row">
+            <div class = "game-cell"></div>
+            <div class = "game-cell"></div>
+            <div class = "game-cell"></div>
+            <div class = "game-cell"></div>
+        </div>
+        <div class = "game-row">
+            <div class = "game-cell"></div>
+            <div class = "game-cell"></div>
+            <div class = "game-cell"></div>
+            <div class = "game-cell"></div>
+        </div>
+        <div class = "game-row">
+            <div class = "game-cell"></div>
+            <div class = "game-cell"></div>
+            <div class = "game-cell"></div>
+            <div class = "game-cell"></div>
+        </div>
+    </div>
+    <script src = "script.js"></script>
 </body>
 </html>
