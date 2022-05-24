@@ -1,16 +1,19 @@
 // document.body.onload = createNewCell(Math.floor(Math.random()*2+1)*2);
-document.body.onclick = createNewCell(2);
+let grid = [["", "", "", ""], 
+            ["", "", "", ""], 
+            ["", "", "", ""], 
+            ["", "", "", ""]];
+document.body.onload = createNewCell(2);
+$(window).resize(function() {
+  console.log('window was resized');
+});
 function createNewCell(num){
     let tile = document.createElement("div")
     // tile.className = 'tile-' + toString(num);
     tile.className = 'tile-2';
-    // tile.style.top = '0px';
-    // tile.style.left = '150px';
+    tile.style.top = '22px';
+    tile.style.left = 960/3+107-23+'px';
+    tile.textContent = "2"
     document.body.appendChild(tile);
 }
-let tile = document.createElement("div")
-// tile.className = 'tile-' + toString(num);
-tile.className = 'tile-2';
-// tile.style.top = '0px';
-// tile.style.left = '150px';
-document.body.appendChild(tile);
+
